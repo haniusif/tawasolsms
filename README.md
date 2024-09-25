@@ -52,7 +52,7 @@ You can send an SMS using the TawasolSms facade:
 
  
 ```bash
-use Haniusif\\TawasolSms\\Facades\\TawasolSms;
+use Haniusif\TawasolSms\Facades\TawasolSms;
 
 $recipient = '9665XXXXXXXX';
 $message = 'Hello, this is a test message!';
@@ -67,7 +67,7 @@ To check your SMS balance:
 
 ```bash
 
-use Haniusif\\TawasolSms\\Facades\\TawasolSms;
+use Haniusif\TawasolSms\Facades\TawasolSms;
 
 $balance = TawasolSms::getBalance();
 ```
@@ -78,7 +78,7 @@ You can check the status of a message (e.g., delivered, pending) using the messa
 
 
 ```bash
-use Haniusif\\TawasolSms\\Facades\\TawasolSms;
+use Haniusif\TawasolSms\Facades\TawasolSms;
 
 $messageId = '123456789';
 $status = TawasolSms::checkStatus($messageId);
