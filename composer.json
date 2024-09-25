@@ -1,0 +1,21 @@
+{
+    "name": "haniusif/tawasolsms",
+    "description": "Laravel package for Tawasol SMS integration",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Hani Yousif",
+            "email": "haniusif@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^7.4",
+        "illuminate/support": "^8.0|^9.0|^10.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Haniusif\\TawasolSms\\": "src/"
+        }
+    }
+}
