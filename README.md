@@ -28,10 +28,10 @@ You can install the package via Composer. If you are using it as a local package
     ```bash
     <?php
 
+ 
     return [
-    'api_url' => env('TAWASOL_SMS_API_URL', 'https://tawasolsms.com:8582/websmpp/websms'),
-    'user' => env('TAWASOL_SMS_USER', ''),
-    'pass' => env('TAWASOL_SMS_PASS', ''),
+    'api_url' => env('TAWASOL_SMS_API_URL', 'https://tawasolsms.com:8582/websmpp'),
+    'accesskey' => env('TAWASOL_SMS_ACCESSKEY', ''),
     'sid' => env('TAWASOL_SMS_SID', ''),
      ];
 
@@ -39,10 +39,10 @@ You can install the package via Composer. If you are using it as a local package
 
 3. After publishing the configuration file, add your Tawasol SMS credentials in the .env file:
    ```bash
-   TAWASOL_SMS_API_URL=https://tawasolsms.com:8582/websmpp/websms
-   TAWASOL_SMS_USER=your_user
-   TAWASOL_SMS_PASS=your_password
    TAWASOL_SMS_SID=your_sender_id
+   TAWASOL_SMS_API_URL=https://gw14.tawasolsms.com:8582/websmpp
+   TAWASOL_SMS_ACCESSKEY=your_access_key
+
    ```
 
 ## Usage
@@ -85,11 +85,15 @@ $status = TawasolSms::checkStatus($messageId);
 ```
 ### Available Methods
 
-    sendSms($mobileNumber, $message, $type = 1): Sends an SMS message. The $type can be 1 (English), 2 (Unicode), or 4 (Arabic).
+        sendSms($mobileNumber, $message, $type = 1, $respformat = 'json'): Sends an SMS message. The $type can be 1 (English), 2 (Unicode), or 4 (Arabic). Returns the API response or false on failure.
 
-    getBalance(): Retrieves the current SMS balance.
-    
-    checkStatus($messageId): Checks the status of a previously sent message using the messageId.
+        getBalance($respformat = 'json'): Retrieves the current SMS balance. Returns the balance information or false on failure.
+
+        checkStatus($messageId): Checks the status of a previously sent message using the messageId. Returns the status or false on failure.
+
+        removeScheduledSms($scheduleId): Removes a scheduled SMS batch using the scheduleId. Returns the API response or false on failure.
+
+        sendScheduledSms($mobileNumber, $message, $gmt, $scheduledTime, $type = 1, $respformat = 'json'): Sends an SMS message scheduled for a specific time. The $gmt is the GMT offset (e.g., +0300), and $scheduledTime is the time in yyyyMMddHHmm format. Returns the API response or false on failure.
 
 ## License
 
