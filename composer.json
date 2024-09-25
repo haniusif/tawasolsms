@@ -1,6 +1,6 @@
 {
     "name": "haniusif/tawasolsms",
-    "description": "Laravel package for Tawasol SMS integration",
+    "description": "A Laravel package for sending SMS via the Tawasol SMS API.",
     "type": "library",
     "license": "MIT",
     "authors": [
@@ -10,7 +10,7 @@
         }
     ],
     "require": {
-        "php": "^7.4",
+        "php": "^7.4 || ^8.0 || ^8.1 || ^8.2",
         "illuminate/support": "^8.0|^9.0|^10.0"
     },
     "autoload": {
