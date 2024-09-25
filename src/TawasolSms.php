@@ -30,6 +30,10 @@ class TawasolSms
 
         $response = Http::get($requestUrl);
 
+        if ($response->failed()) {
+            \Log::error('SMS API call failed', ['response' => $response->body()]);
+        }
+
 
         if ($response->successful()) {
             return $response->json();
