@@ -12,30 +12,20 @@ The **Tawasol SMS Laravel Package** is an unofficial module designed to easily i
 
 You can install the package via Composer. If you are using it as a local package, follow the steps below:
 
-1. Add the repository to your `composer.json`:
 
-   ```json
-   "repositories": [
-       {
-           "type": "path",
-           "url": "packages/haniusif/tawasolsms"
-       }
-   ]
-   ```
-
-2. Run the following command to install the package:
+1. Run the following command to install the package:
 
     ```bash
     composer require haniusif/tawasolsms
     ```
 
-3. Publish the configuration file:
+2. Publish the configuration file:
 
     ```bash
     php artisan vendor:publish --tag=config --provider="Haniusif\\TawasolSms\\TawasolSmsServiceProvider"
     ```
 
-5. After publishing the configuration file, add your Tawasol SMS credentials in the .env file:
+3. After publishing the configuration file, add your Tawasol SMS credentials in the .env file:
    ```bash
    TAWASOL_SMS_API_URL=https://tawasolsms.com:8582/websmpp/websms
    TAWASOL_SMS_USER=your_user
