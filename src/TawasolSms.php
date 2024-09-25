@@ -23,6 +23,11 @@ class TawasolSms
     {
         $requestUrl = "{$this->url}?user={$this->user}&pass={$this->pass}&sid={$this->sid}&mno={$mobileNumber}&type={$type}&text=" . urlencode($message);
 
+
+        if (empty($this->url) || empty($this->user) || empty($this->pass) || empty($this->sid)) {
+            throw new \Exception("Missing API credentials");
+        }
+
         $response = Http::get($requestUrl);
 
 
