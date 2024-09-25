@@ -17,5 +17,12 @@
         "psr-4": {
             "Haniusif\\TawasolSms\\": "src/"
         }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Haniusif\\TawasolSms\\TawasolSmsServiceProvider"
+            ]
+        }
     }
 }

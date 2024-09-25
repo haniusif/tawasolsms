@@ -24,9 +24,17 @@ You can install the package via Composer. If you are using it as a local package
     ```bash
     php artisan vendor:publish --tag=config --provider="Haniusif\\TawasolSms\\TawasolSmsServiceProvider"
     ```
-
+    Create a config file config/tawasolsms.php for user credentials and API settings:
     ```bash
-    php artisan vendor:publish --tag=config
+    <?php
+
+return [
+    'api_url' => env('TAWASOL_SMS_API_URL', 'https://tawasolsms.com:8582/websmpp/websms'),
+    'user' => env('TAWASOL_SMS_USER', ''),
+    'pass' => env('TAWASOL_SMS_PASS', ''),
+    'sid' => env('TAWASOL_SMS_SID', ''),
+];
+
     ```
 
 3. After publishing the configuration file, add your Tawasol SMS credentials in the .env file:
